@@ -2,29 +2,30 @@
 
 <h1>Listing Birds</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Species</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @birds.each do |bird| %>
-      <tr>
-        <td><%= bird.name %></td>
-        <td><%= bird.price %></td>
-        <td><%= bird.species %></td>
-        <td><%= link_to 'Show', bird %></td>
-        <td><%= link_to 'Edit', edit_bird_path(bird) %></td>
-        <td><%= link_to 'Destroy', bird, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+  <div class="product">
+    <div class="name">
+      <p><%= bird.name %></p>
+    </div>
+    <div class="price">
+      <p>€<%= bird.price %></p>
+    </div>
+    <div class="species">
+        <p><%= bird.species %></p>
+    </div>
+    <div class="image">
+        <p><%= image_tag bird.image %></p>
+    </div>
+
+
+  <div class="actions">
+  <%= link_to 'Show', bird %>
+  <%= link_to 'Edit', edit_bird_path(bird) %>
+  <%= link_to 'Destroy', bird, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  </div>
     <% end %>
-  </tbody>
-</table>
 
 <br>
 

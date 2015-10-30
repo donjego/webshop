@@ -15,5 +15,16 @@
   <%= @bird.species %>
 </p>
 
+<p>
+  <strong>Image:</strong>
+  <%= @bird.image %>
+</p>
+
+<div class="image">
+    <p><%= image_tag @bird.image %></p>
+</div>
+
+
 <%= link_to 'Edit', edit_bird_path(@bird) %> |
+<%= link_to 'New Bird', new_bird_path %> |
 <%= link_to 'Back', birds_path %>
